@@ -66,6 +66,10 @@ class Search:
         """Obtain and read the filename that contains the patterns."""
         pattern_names = "\nPlease type the name of the file containing the patterns ('q' to quit): "
         while True:
+            """
+            The self.pattern attribute assumes the value of input(file_name). If it's 'q' the program exits, else self.pattern is read line by line and its value returned as self.pattern_lines.
+            If self.pattern is invalid (eg. doesn't exist), the program will ask continuously for a proper self.pattern.
+            """
             self.pattern = input(pattern_names)
             if self.pattern == 'q':
                 print("Quitting Search...")
@@ -81,18 +85,31 @@ class Search:
 
     def strip_files(self):
         """Strip both file names."""
-        # Make all the list items lowercase and remove all the whitespaces.
         while True:
+            # If self.filename_lines or self.pattern_lines are 'q' the program exits.
             if self.filename_lines == 'q' or self.pattern_lines == 'q':
                 exit()
             else:
+                """
+                List comprehension that strips the empty spaces and makes all the alphabetical characters lowercase.
+                I had to Google this. My knowledge of list comprehensions is limited.
+                I tried using for loops with no success.
+                I'll explain this better later if I can.
+                """
                 self.filename_lines = [self.filename_lines.lower().strip() for self.filename_lines in self.filename_lines]
                 self.pattern_lines = [self.pattern_lines.lower().strip() for self.pattern_lines in self.pattern_lines]
                 break
 
     def find_patterns(self):
         """Use the patterns to search."""
+        # Insert a single newline. If 'end = ""' is removed, you'll get a double newline because print itself inserts a newline to the output.
         print("\n", end = "")
+        """
+        List comprehension that compares the patterns with the file name obtained from the user.
+        I had to Google this. My knowledge of list comprehensions is limited.
+        I tried using for loops with no success.
+        I'll explain this better later if I can.
+        """
         matches = [item for item in self.pattern_lines if any(item in item for item in self.filename_lines)]
         for match1 in matches:
             matches = [item for item in self.filename_lines if match1 in item]
