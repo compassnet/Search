@@ -46,6 +46,10 @@ class Search:
         """Obtain and read the filename to search from."""
         file_name = "\nPlease type the name of the file you want to search from ('q' to quit): "
         while True:
+            """
+            The self.filename attribute assumes the value of input(file_name). If it's 'q' the program exits, else self.filename is read line by line and its value returned as self.filename_lines.
+            If self.filename is invalid (eg. doesn't exist), the program will ask continuously for a proper self.filename.
+            """
             self.filename = input(file_name)
             if self.filename == 'q':
                 print("Quitting Search...")
