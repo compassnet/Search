@@ -4,7 +4,9 @@
 """
 Search - A program to search for text patterns
 Copyright (C) 2020 Compass 
-Website: https://8kun.top/slackware/
+Websites:
+    https://8kun.top/slackware/
+    https://github.com/compassnet
 IRC Channels:
     #slackware@irc.rizon.net
     ##python@irc.rizon.net
@@ -25,6 +27,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 MA 02110-1301, USA.
 """
+
 
 class Search:
     """Class that represents a text pattern searching program."""
@@ -153,6 +156,7 @@ class Search:
             matches = [item for item in self.filename_lines if match1 in item]
             for match2 in matches:
                 print(f"Pattern \"{match1}\" found in line -> \"{match2}\"")
+
 
 test = Search()
 test.instructions()
