@@ -52,7 +52,8 @@ class Search:
                 "3. Search requires you to type the name of the\n"
                 "file containing the search patterns (one pattern\n"
                 "per line).\n"
-                "4. Use 'q' at any time to quit the program.")
+                "4. Use 'q' at any time to quit the program."
+                )
         print(message)
 
     def file_name(self):
