@@ -93,7 +93,7 @@ class Search:
                 """
                 List comprehension that strips the empty spaces and makes all the alphabetical characters lowercase.
                 I had to Google this. My knowledge of list comprehensions is limited.
-                I tried using for loops with no success.
+                I tried using for loops with no success, but if I can get that to work I might change the code.
                 I'll explain this better later if I can.
                 """
                 self.filename_lines = [self.filename_lines.lower().strip() for self.filename_lines in self.filename_lines]
@@ -107,7 +107,7 @@ class Search:
         """
         List comprehension that compares the patterns with the file name obtained from the user.
         I had to Google this. My knowledge of list comprehensions is limited.
-        I tried using for loops with no success.
+        I tried using for loops with no success, but if I can get that to work I might change the code.
         I'll explain this better later if I can.
         """
         matches = [item for item in self.pattern_lines if any(item in item for item in self.filename_lines)]
