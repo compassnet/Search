@@ -34,8 +34,8 @@ class Search:
 
     def __init__(self):
         """Initialize the attributes below if present."""
-        self.filename_lines = ''
-        self.pattern_lines = ''
+        self.filename_lines = None
+        self.pattern_lines = None
 
     def instructions(self):
         """Instructions of the Search program."""
